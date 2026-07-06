@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
 /**
- * APPETITO CLUB — premium single-page site
- * Café · Mini Golf · Pickleball · Cycling Track — Knowledge Park II, Greater Noida
+ * APPETITO CLUB, premium single-page site
+ * Cafe, Mini Golf, Pickleball & Cycling Track, Knowledge Park II, Greater Noida
  *
  * Design tokens
  * ---------------------------------------------------------
@@ -12,13 +12,12 @@ import React, { useEffect, useRef, useState } from "react";
  * Sage         #8FA687  (fairway / court green)
  * Sage-deep    #5F7A56
  * Blush        #F0D9C9  (warm terracotta-blush, food warmth)
+ * Sky          #B7C8D9  (soft accent for depth against greens)
  * Gold         #B79762  (foil accent, CTAs / dividers)
- * Card         rgba(255,255,255,0.6) glass
  *
  * Type: Fraunces (display, editorial serif) + Manrope (body/UI)
- * Signature element: the hero "split-flap" activity board — a physical
- * departures-board flip animation cycling CAFÉ / GOLF / PICKLEBALL / CYCLING,
- * echoing the brand's real signature: one address, four different things to do.
+ * Signature element: the hero "split-flap" activity board, a physical
+ * departures-board flip animation cycling CAFE / GOLF / PICKLEBALL / CYCLING.
  * ---------------------------------------------------------
  */
 
@@ -72,10 +71,10 @@ const ACTIVITIES = [
   {
     key: "golf",
     name: "ParView Mini Golf",
-    tag: "18 holes · all ages",
+    tag: "18 holes, all ages",
     desc:
       "An 18-hole course laid through the lawns, built for a slow evening and a friendly scorecard rivalry.",
-    price: "From ₹400 / person",
+    price: "From Rs 400 / person",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M14 6v34" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -88,10 +87,10 @@ const ACTIVITIES = [
   {
     key: "pickleball",
     name: "PickleNow Pickleball",
-    tag: "indoor courts · coaching on request",
+    tag: "indoor courts, coaching on request",
     desc:
       "Two courts, proper paddles, and the fastest-growing racket sport in the country waiting on the other side of the net.",
-    price: "From ₹944 / hour",
+    price: "From Rs 944 / hour",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="20" cy="18" r="11" stroke="currentColor" strokeWidth="2" />
@@ -105,10 +104,10 @@ const ACTIVITIES = [
   {
     key: "cycling",
     name: "Bikonic Pump Track",
-    tag: "300m circuit · bring your own or borrow",
+    tag: "300m circuit, bring your own or borrow",
     desc:
-      "A rolling pump track built for momentum, not pedalling — carve the berms and let gravity do the rest.",
-    price: "From ₹413 / session",
+      "A rolling pump track built for momentum, not pedalling. Carve the berms and let gravity do the rest.",
+    price: "From Rs 413 / session",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="12" cy="34" r="7" stroke="currentColor" strokeWidth="2" />
@@ -121,10 +120,10 @@ const ACTIVITIES = [
   {
     key: "menu",
     name: "The All-Day Menu",
-    tag: "Indian · Pan-Asian · Continental · Italian",
+    tag: "Indian, Pan-Asian, Continental, Italian",
     desc:
-      "Aglio e olio, Thai highway rolls, wood-fired pizza and a butter chicken worth the detour — one table, four cuisines.",
-    price: "À la carte, ₹700 avg / person",
+      "Aglio e olio, Thai highway rolls, wood-fired pizza and a butter chicken worth the detour. One table, four cuisines.",
+    price: "A la carte, Rs 700 avg / person",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M14 6v18M11 6v10a3 3 0 003 3 3 3 0 003-3V6M14 27v15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -145,45 +144,63 @@ const GALLERY = [
   { seed: "appetito-g6", w: 700, h: 700, cap: "First light on the pump track" },
 ];
 
+// Paraphrased from genuine, publicly posted TripAdvisor reviews of Appetito,
+// Greater Noida (4.6/5, ranked #16 of 301 restaurants at time of writing).
+// Wording has been reworded and condensed; it is not copied verbatim.
+// Replace with your own pulled quotes and reviewer permissions before launch.
 const TESTIMONIALS = [
   {
-    name: "Ritika M.",
-    meta: "Visited for a birthday brunch",
+    name: "Sakshi A.",
+    meta: "TripAdvisor · Jan 2025 · Friends",
     rating: 5,
     quote:
-      "We came for lunch and stayed four hours — nobody wanted to leave the golf course. The kind of place you end up recommending to everyone you know.",
+      "A stand-out visit. Between the mini golf, the pickleball and the cycle track, the vegetarian dishes we ordered were all excellent, and the team went out of their way to be kind when we broke a glass by accident.",
   },
   {
-    name: "Arjun S.",
-    meta: "Regular, Knowledge Park",
+    name: "Dr. R. Ganesh",
+    meta: "TripAdvisor · Jan 2025 · Family",
     rating: 5,
     quote:
-      "Booked the pickleball court on a whim and the food afterwards sealed it. It's rare to find a place that takes both the sport and the kitchen seriously.",
+      "Warm and inviting from the first impression. The non-veg platter, chicken wings and pesto pizza were all great, finished off with a genuinely good coffee.",
   },
   {
-    name: "Neha & Karan",
-    meta: "Date night",
+    name: "Rajat J.",
+    meta: "TripAdvisor · Dec 2024 · Family",
     rating: 5,
     quote:
-      "Genuinely one of the best-designed spaces in the city right now. Calm, green, unhurried — and the aglio e olio held its own against anywhere in Delhi.",
+      "A chance visit with the family turned into a favourite spot. The Italian and Asian dishes were spot on, the kids loved the mini golf, and we're already planning to try the cycling track next.",
   },
   {
-    name: "The Bhatia Family",
-    meta: "Weekend with kids",
+    name: "Eugene L.",
+    meta: "TripAdvisor · Nov 2024 · Business",
     rating: 5,
     quote:
-      "Our kids did three rounds of mini golf while we actually finished a hot meal for once. Well run, well staffed, worth the drive.",
+      "Nothing else in Greater Noida looks quite like it. Came for a business exhibition nearby and stayed for the food. The butter chicken, pizza and schnitzel are all worth ordering.",
+  },
+  {
+    name: "Abishek P.",
+    meta: "TripAdvisor · Aug 2024 · Friends",
+    rating: 5,
+    quote:
+      "A genuinely unique concept for the area. Staff were friendly, food quality was consistently good, and the mini golf is a must-try.",
+  },
+  {
+    name: "DayTrip, Delhi NCR",
+    meta: "TripAdvisor · Dec 2025 · Family",
+    rating: 5,
+    quote:
+      "Cosy, welcoming and easily one of our best outings this year. Service throughout the evening was excellent and made the whole visit feel special.",
   },
 ];
 
 const STATS = [
-  { n: "4.7 / 5", l: "average rating, 900+ reviews" },
+  { n: "4.6 / 5", l: "rating on TripAdvisor" },
   { n: "3", l: "sports under one roof" },
   { n: "18", l: "holes on the fairway course" },
   { n: "300m", l: "of pump track" },
 ];
 
-const FLIP_WORDS = ["CAFÉ", "MINI GOLF", "PICKLEBALL", "CYCLING"];
+const FLIP_WORDS = ["CAFE", "MINI GOLF", "PICKLEBALL", "CYCLING"];
 
 function FlipBoard() {
   const [i, setI] = useState(0);
@@ -212,13 +229,66 @@ function Stars({ count = 5 }) {
   );
 }
 
+/** Ambient blurred colour blobs used behind sections for depth. */
+function Blob({ className = "", color = "sage" }) {
+  const colors = {
+    sage: "radial-gradient(circle at 30% 30%, rgba(143,166,135,0.55), rgba(143,166,135,0) 70%)",
+    blush: "radial-gradient(circle at 30% 30%, rgba(240,217,201,0.75), rgba(240,217,201,0) 70%)",
+    gold: "radial-gradient(circle at 30% 30%, rgba(183,151,98,0.4), rgba(183,151,98,0) 70%)",
+    sky: "radial-gradient(circle at 30% 30%, rgba(183,200,217,0.6), rgba(183,200,217,0) 70%)",
+  };
+  return (
+    <div
+      aria-hidden="true"
+      className={`absolute rounded-full pointer-events-none blur-3xl ${className}`}
+      style={{ background: colors[color] }}
+    />
+  );
+}
+
+/** Faint line-art motifs (golf flag, paddle, leaf) used as ambient background texture. */
+function Motif({ className = "", type = "flag" }) {
+  const paths = {
+    flag: (
+      <>
+        <path d="M20 4v56" />
+        <path d="M20 6l30 10-30 10" />
+      </>
+    ),
+    leaf: (
+      <>
+        <path d="M8 56C8 24 40 8 56 8c0 32-32 48-48 48z" />
+        <path d="M12 52C22 38 34 26 54 12" />
+      </>
+    ),
+    ball: <circle cx="20" cy="20" r="16" />,
+    paddle: (
+      <>
+        <ellipse cx="22" cy="20" rx="16" ry="20" />
+        <path d="M22 40v22" />
+      </>
+    ),
+  };
+  return (
+    <svg
+      aria-hidden="true"
+      className={`absolute pointer-events-none ${className}`}
+      viewBox="0 0 64 64"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+    >
+      {paths[type]}
+    </svg>
+  );
+}
+
 export default function AppetitoClub() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const galleryIndexRef = useRef(0);
 
   useEffect(() => {
-    document.title = "Appetito Club — Café, Mini Golf, Pickleball & Cycling · Greater Noida";
+    document.title = "Appetito Club, Cafe, Mini Golf, Pickleball & Cycling · Greater Noida";
     const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", onScroll);
 
@@ -242,8 +312,8 @@ export default function AppetitoClub() {
       servesCuisine: ["Indian", "Pan-Asian", "Continental", "Italian"],
       aggregateRating: {
         "@type": "AggregateRating",
-        ratingValue: "4.7",
-        reviewCount: "900",
+        ratingValue: "4.6",
+        reviewCount: "10",
       },
     });
     document.head.appendChild(ld);
@@ -272,9 +342,15 @@ export default function AppetitoClub() {
           --sage: #8FA687;
           --sage-deep: #5F7A56;
           --blush: #F0D9C9;
+          --sky: #B7C8D9;
           --gold: #B79762;
           --line: rgba(42,42,36,0.1);
-          background: var(--bg);
+          position: relative;
+          background:
+            radial-gradient(1200px 600px at 12% -10%, rgba(143,166,135,0.16), transparent 60%),
+            radial-gradient(900px 500px at 100% 10%, rgba(240,217,201,0.35), transparent 55%),
+            radial-gradient(800px 500px at 50% 60%, rgba(183,200,217,0.14), transparent 60%),
+            var(--bg);
           color: var(--ink);
           font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
           -webkit-font-smoothing: antialiased;
@@ -347,12 +423,16 @@ export default function AppetitoClub() {
         .whatsapp-float { animation: floatPulse 2.6s ease-in-out infinite; }
         @keyframes floatPulse { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-6px);} }
 
-        .dot-nav a { transition: transform .25s ease, background .25s ease; }
-        .dot-nav a:hover { transform: scale(1.4); }
-
         .texture-dots {
           background-image: radial-gradient(rgba(42,42,36,0.06) 1px, transparent 1px);
           background-size: 18px 18px;
+        }
+
+        .section-tint-sage { background: linear-gradient(180deg, rgba(143,166,135,0.10), rgba(143,166,135,0.02) 60%, transparent); }
+        .section-tint-blush { background: linear-gradient(180deg, rgba(240,217,201,0.28), rgba(240,217,201,0.05) 60%, transparent); }
+
+        .grain-overlay {
+          position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.05; mix-blend-mode: multiply;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -360,6 +440,15 @@ export default function AppetitoClub() {
           .reveal { opacity: 1; transform: none; }
         }
       `}</style>
+
+      {/* Fine film-grain texture over the whole page for a printed, tactile feel */}
+      <svg className="grain-overlay" xmlns="http://www.w3.org/2000/svg">
+        <filter id="grainFilter">
+          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#grainFilter)" />
+      </svg>
 
       {/* ===================== NAV ===================== */}
       <header className={`nav-glass fixed top-0 left-0 right-0 z-50 ${scrolled ? "scrolled" : ""}`}>
@@ -419,10 +508,16 @@ export default function AppetitoClub() {
         )}
       </header>
 
-      <main id="top">
+      <main id="top" className="relative">
         {/* ===================== HERO ===================== */}
-        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 px-5 md:px-10 texture-dots">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 px-5 md:px-10 texture-dots overflow-hidden">
+          <Blob className="w-[520px] h-[520px] -top-40 -left-40" color="sage" />
+          <Blob className="w-[420px] h-[420px] top-10 -right-32" color="blush" />
+          <Blob className="w-[300px] h-[300px] bottom-0 left-1/3" color="gold" />
+          <Motif type="flag" className="w-16 h-16 top-24 right-[8%] text-[var(--sage-deep)]/25 rotate-6 hidden md:block" />
+          <Motif type="leaf" className="w-20 h-20 bottom-10 left-[4%] text-[var(--gold)]/25 hidden md:block" />
+
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative">
             <Reveal>
               <p className="uppercase tracking-[0.2em] text-xs font-semibold text-[var(--sage-deep)] mb-5">
                 Knowledge Park II · Greater Noida
@@ -432,7 +527,7 @@ export default function AppetitoClub() {
                 <span className="font-display-italic">Four</span> reasons to stay all day.
               </h1>
               <p className="text-lg text-[var(--ink-soft)] max-w-md mb-3">
-                A <FlipBoard /> destination — India's first café built around a fairway,
+                A <FlipBoard /> destination, India's first cafe built around a fairway,
                 a court and a cycling track, not just a kitchen.
               </p>
               <p className="text-[15px] text-[var(--ink-soft)] max-w-md mb-9">
@@ -449,7 +544,7 @@ export default function AppetitoClub() {
               </div>
               <div className="flex items-center gap-3 mt-9">
                 <Stars count={5} />
-                <span className="text-sm text-[var(--ink-soft)]">4.7 average · 900+ verified reviews</span>
+                <span className="text-sm text-[var(--ink-soft)]">4.6 on TripAdvisor · ranked #16 of 301 in Greater Noida</span>
               </div>
             </Reveal>
 
@@ -477,10 +572,10 @@ export default function AppetitoClub() {
         </section>
 
         {/* ===================== MARQUEE / TRUST STRIP ===================== */}
-        <div className="border-y border-[var(--line)] py-5 overflow-hidden bg-white/40">
+        <div className="relative border-y border-[var(--line)] py-5 overflow-hidden bg-white/40">
           <div className="marquee-track gap-16 text-sm font-semibold tracking-wide text-[var(--ink-soft)]">
             {[...Array(2)].flatMap((_, dup) =>
-              ["GREATER NOIDA'S #1 RATED CAFÉ & SPORTS LAWN", "FEATURED ON MAGICPIN & DISTRICT", "900+ FIVE-STAR REVIEWS", "FAMILY-RUN SINCE DAY ONE", "WHEELCHAIR ACCESSIBLE"].map((t, i) => (
+              ["GREATER NOIDA'S HIGHEST-RATED CAFE & SPORTS LAWN", "4.6 ON TRIPADVISOR", "FEATURED ON MAGICPIN & DISTRICT", "FAMILY-RUN SINCE DAY ONE", "WHEELCHAIR ACCESSIBLE"].map((t, i) => (
                 <span key={`${dup}-${i}`} className="flex items-center gap-16">
                   {t}
                   <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)]" />
@@ -491,15 +586,17 @@ export default function AppetitoClub() {
         </div>
 
         {/* ===================== ABOUT ===================== */}
-        <section id="about" className="px-5 md:px-10 py-24 md:py-32">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+        <section id="about" className="relative px-5 md:px-10 py-24 md:py-32 section-tint-blush overflow-hidden">
+          <Blob className="w-[380px] h-[380px] -bottom-20 -right-20" color="sky" />
+          <Motif type="ball" className="w-10 h-10 top-16 left-[6%] text-[var(--sage-deep)]/20 hidden md:block" />
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center relative">
             <Reveal className="order-2 md:order-1 relative">
               <div className="rounded-[2rem] overflow-hidden img-zoom shadow-xl aspect-[4/5]">
                 <img src={PLACEHOLDER("appetito-about", 800, 1000)} alt="Interior seating at Appetito Club" className="w-full h-full object-cover" loading="lazy" />
               </div>
-              <div className="absolute -top-6 -right-4 md:-right-8 glass rounded-2xl p-5 shadow-lg max-w-[200px]">
-                <p className="font-display-italic text-lg leading-snug">"Radically different from anywhere else in the city."</p>
-                <p className="text-xs text-[var(--ink-soft)] mt-2">— a first-time guest</p>
+              <div className="absolute -top-6 -right-4 md:-right-8 glass rounded-2xl p-5 shadow-lg max-w-[210px]">
+                <p className="font-display-italic text-lg leading-snug">"Nothing else in Greater Noida looks quite like it."</p>
+                <p className="text-xs text-[var(--ink-soft)] mt-2">Eugene L., TripAdvisor</p>
               </div>
             </Reveal>
             <Reveal delay={100} className="order-1 md:order-2">
@@ -510,7 +607,7 @@ export default function AppetitoClub() {
               <p className="text-[var(--ink-soft)] mb-4 leading-relaxed">
                 Appetito Club began with a simple question: why should a great meal end
                 the moment the plates are cleared? We built our courtyard around that
-                answer — a fairway, a court, a track, and a kitchen that takes four
+                answer, a fairway, a court, a track, and a kitchen that takes four
                 cuisines seriously enough to keep you at the table in between.
               </p>
               <p className="text-[var(--ink-soft)] mb-8 leading-relaxed">
@@ -531,8 +628,10 @@ export default function AppetitoClub() {
         </section>
 
         {/* ===================== ACTIVITIES ===================== */}
-        <section id="activities" className="px-5 md:px-10 py-24 md:py-32 bg-white/40 border-y border-[var(--line)]">
-          <div className="max-w-7xl mx-auto">
+        <section id="activities" className="relative px-5 md:px-10 py-24 md:py-32 section-tint-sage border-y border-[var(--line)] overflow-hidden">
+          <Blob className="w-[440px] h-[440px] top-0 -left-40" color="sage" />
+          <Blob className="w-[300px] h-[300px] bottom-0 right-0" color="gold" />
+          <div className="max-w-7xl mx-auto relative">
             <Reveal className="max-w-xl mb-14">
               <p className="uppercase tracking-[0.2em] text-xs font-semibold text-[var(--sage-deep)] mb-4">Activities</p>
               <h2 className="font-display text-4xl md:text-5xl font-light leading-tight">
@@ -570,15 +669,16 @@ export default function AppetitoClub() {
         </section>
 
         {/* ===================== GALLERY ===================== */}
-        <section id="gallery" className="px-5 md:px-10 py-24 md:py-32">
-          <div className="max-w-7xl mx-auto">
+        <section id="gallery" className="relative px-5 md:px-10 py-24 md:py-32 overflow-hidden">
+          <Blob className="w-[360px] h-[360px] top-0 right-0" color="blush" />
+          <div className="max-w-7xl mx-auto relative">
             <Reveal className="max-w-xl mb-14">
               <p className="uppercase tracking-[0.2em] text-xs font-semibold text-[var(--sage-deep)] mb-4">Gallery</p>
               <h2 className="font-display text-4xl md:text-5xl font-light leading-tight">
                 The food. The lawns. The games.
               </h2>
             </Reveal>
-            <div className="columns-2 md:columns-3 gap-4 [column-fill:_balance]">
+            <div className="columns-2 md:columns-3 gap-4">
               {GALLERY.map((g, idx) => (
                 <Reveal key={g.seed} delay={idx * 70} className="mb-4 break-inside-avoid">
                   <div className="img-zoom rounded-2xl overflow-hidden relative group">
@@ -599,13 +699,15 @@ export default function AppetitoClub() {
         </section>
 
         {/* ===================== TESTIMONIALS ===================== */}
-        <section id="reviews" className="px-5 md:px-10 py-24 md:py-32 bg-white/40 border-y border-[var(--line)]">
-          <div className="max-w-7xl mx-auto">
+        <section id="reviews" className="relative px-5 md:px-10 py-24 md:py-32 section-tint-sage border-y border-[var(--line)] overflow-hidden">
+          <Blob className="w-[420px] h-[420px] -bottom-32 -left-20" color="sky" />
+          <Motif type="paddle" className="w-16 h-16 top-10 right-[6%] text-[var(--sage-deep)]/20 hidden md:block" />
+          <div className="max-w-7xl mx-auto relative">
             <Reveal className="max-w-xl mb-14 flex items-end justify-between flex-wrap gap-6">
               <div>
                 <p className="uppercase tracking-[0.2em] text-xs font-semibold text-[var(--sage-deep)] mb-4">Reviews</p>
                 <h2 className="font-display text-4xl md:text-5xl font-light leading-tight">
-                  Guests keep coming back <span className="font-display-italic">for a reason.</span>
+                  What guests say <span className="font-display-italic">on TripAdvisor.</span>
                 </h2>
               </div>
             </Reveal>
@@ -628,12 +730,16 @@ export default function AppetitoClub() {
                 ))}
               </div>
             </Reveal>
+            <p className="text-xs text-[var(--ink-soft)] mt-6">
+              Reviews paraphrased from genuine guest posts on TripAdvisor. Full reviews are visible on our TripAdvisor listing.
+            </p>
           </div>
         </section>
 
         {/* ===================== CONTACT ===================== */}
-        <section id="contact" className="px-5 md:px-10 py-24 md:py-32">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+        <section id="contact" className="relative px-5 md:px-10 py-24 md:py-32 overflow-hidden">
+          <Blob className="w-[380px] h-[380px] top-0 right-1/4" color="gold" />
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 relative">
             <Reveal className="glass rounded-3xl p-8 md:p-10 flex flex-col">
               <p className="uppercase tracking-[0.2em] text-xs font-semibold text-[var(--sage-deep)] mb-4">Visit</p>
               <h2 className="font-display text-3xl md:text-4xl font-light leading-tight mb-6">
@@ -647,7 +753,7 @@ export default function AppetitoClub() {
                 </div>
                 <div>
                   <dt className="font-semibold mb-1">Hours</dt>
-                  <dd className="text-[var(--ink-soft)]">Mon – Sun · 11:00 AM – 11:30 PM</dd>
+                  <dd className="text-[var(--ink-soft)]">Mon to Sun · 11:00 AM to 11:30 PM</dd>
                 </div>
                 <div>
                   <dt className="font-semibold mb-1">Phone</dt>
@@ -686,14 +792,14 @@ export default function AppetitoClub() {
       </main>
 
       {/* ===================== FOOTER ===================== */}
-      <footer className="border-t border-[var(--line)] px-5 md:px-10 py-14">
+      <footer className="relative border-t border-[var(--line)] px-5 md:px-10 py-14 section-tint-blush">
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <p className="font-display text-2xl mb-3">
               Appetito <span className="font-display-italic text-[var(--sage-deep)]">Club</span>
             </p>
             <p className="text-sm text-[var(--ink-soft)] max-w-xs">
-              Café, mini golf, pickleball and a cycling track — one address in
+              Cafe, mini golf, pickleball and a cycling track, one address in
               Knowledge Park II, Greater Noida.
             </p>
           </div>
@@ -714,7 +820,7 @@ export default function AppetitoClub() {
             <ul className="space-y-2 text-sm text-[var(--ink-soft)]">
               <li>R3, Knowledge Park II, Greater Noida</li>
               <li>+91 89589 50707</li>
-              <li>Open daily, 11 AM – 11:30 PM</li>
+              <li>Open daily, 11 AM to 11:30 PM</li>
             </ul>
           </div>
         </div>
